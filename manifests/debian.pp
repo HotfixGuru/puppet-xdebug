@@ -7,14 +7,5 @@ class xdebug::debian {
         ensure => installed,
         require => Class['php'],
     }
-    
-    augeas { "xdebug php.ini settings":
-        context => "${xdebug::params::conf}/xdebug.ini",
-        changes => [
-        ],
-        require => [ 
-            Package['xdebug'],
-        ],
-    }
 
 }

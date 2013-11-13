@@ -56,6 +56,5 @@ define xdebug::config (
         content => template('xdebug/ini_file.erb'),
         ensure  => present,
         require => Package['xdebug'],
-        notify  => Service['apache2'],
     }
 }

@@ -1,12 +1,13 @@
 define xdebug::config (
     #Template variables
-    $ini_file_path    = '',
-    $default_enable   = '',
-    $remote_enable    = '',
-    $remote_handler   = '',
-    $remote_host      = '',
-    $remote_port      = '',
-    $remote_autostart = '',
+    $ini_file_path        = '',
+    $default_enable       = '',
+    $remote_enable        = '',
+    $remote_handler       = '',
+    $remote_host          = '',
+    $remote_port          = '',
+    $remote_autostart     = '',
+    $remote_connect_back  = '',
   )
 {
 
@@ -44,6 +45,11 @@ define xdebug::config (
     $xdebug_remote_autostart = $remote_autostart ? {
         ''      => '1',
         default => $remote_autostart,
+    }
+
+    $xdebug_remote_connect_back = $remote_connect_back ? {
+        ''      => '0',
+        default => $remote_connect_back,
     }
 
     file { "$xdebug_ini_file_path" :

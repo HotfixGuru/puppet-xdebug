@@ -5,7 +5,7 @@ class xdebug::debian {
     package { "xdebug":
         name   => $xdebug::params::pkg,
         ensure => installed,
-        require => Package['php-cli'],
+        require => Package['php5-cli'],
     }
 
 }

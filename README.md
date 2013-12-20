@@ -21,7 +21,7 @@ Advanced configuration:
 Author: Stefan Kögel
 Contributor: Alex Knol
 
-GitHub: git@github.com:Elexy/puppet-xdebug.git
+GitHub: git@github.com:stkoegel/puppet-xdebug.git
 
 Changelog:
 

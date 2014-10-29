@@ -13,7 +13,7 @@ define xdebug::config (
 
     #Template variables default values
     $xdebug_ini_file_path = $ini_file_path ? {
-        ''      => '/etc/php5/conf.d/xdebug_config.ini',
+        ''      => '/etc/php5/mods-available/xdebug.ini',
         default => $ini_file_path,
     }
 

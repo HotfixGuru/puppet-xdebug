@@ -19,6 +19,7 @@ Advanced configuration:
     }
 
 Author: Stefan Kögel
+Contributor: Alex Knol
 
 GitHub: git@github.com:stkoegel/puppet-xdebug.git
 
@@ -28,4 +29,4 @@ Changelog:
 * Version 0.2 - Add xdebug configuration options
 
 ToDo:
-- add support for RedHat and other os
+- add support for RedHat and other os

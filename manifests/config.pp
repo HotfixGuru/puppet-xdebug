@@ -1,18 +1,19 @@
 define xdebug::config (
     #Template variables
-    $ini_file_path    = '',
-    $default_enable   = '',
-    $remote_enable    = '',
-    $remote_handler   = '',
-    $remote_host      = '',
-    $remote_port      = '',
-    $remote_autostart = '',
+    $ini_file_path        = '',
+    $default_enable       = '',
+    $remote_enable        = '',
+    $remote_handler       = '',
+    $remote_host          = '',
+    $remote_port          = '',
+    $remote_autostart     = '',
+    $remote_connect_back  = '',
   )
 {
 
     #Template variables default values
     $xdebug_ini_file_path = $ini_file_path ? {
-        ''      => '/etc/php5/conf.d/xdebug_config.ini',
+        ''      => '/etc/php5/mods-available/xdebug_config.ini',
         default => $ini_file_path,
     }
 
@@ -46,10 +47,14 @@ define xdebug::config (
         default => $remote_autostart,
     }
 
+    $xdebug_remote_connect_back = $remote_connect_back ? {
+        ''      => '0',
+        default => $remote_connect_back,
+    }
+
     file { "$xdebug_ini_file_path" :
         content => template('xdebug/ini_file.erb'),
         ensure  => present,
         require => Package['xdebug'],
-        notify  => Service['apache2'],
     }
 }
